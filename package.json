@@ -1,11 +1,10 @@
 {
-  "name": "eaglejs-example",
+  "name": "eaglejs-vue-slideshow",
   "version": "0.2.0",
-  "description": "Example presentation with Eagle.js",
-  "author": "Zulko",
+  "description": "Playing with Eagle",
+  "author": "protonbobby",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zulko/eaglejs-demo.git"
   },
   "license": "ISC",
   "scripts": {
@@ -53,6 +52,7 @@
       "parser": "babel-eslint"
     }
   },
+  "prettier.singleQuote": true,
   "postcss": {
     "plugins": {
       "autoprefixer": {}

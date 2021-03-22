@@ -48,9 +48,9 @@
           export default {
             mixins: [ eagle.slideshow ],
             infos: {
-              title: 'Your First Slideshow',
+              title: 'vue-ui',
               description: 'A boilerplate to get you started',
-              path: 'your-first-slideshow'
+              path: 'vue-ui'
             }
           }
           &lt;/script&gt;

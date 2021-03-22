@@ -3,20 +3,6 @@
   .content
     h1
       span.logo
-      span Eagle
-      span.grey .js
-    h2 A slideshow framework for hackers
-
-    iframe.github-star(src="https://ghbtns.com/github-btn.html?user=zulko&repo=eagle.js&type=star&count=true&size=large"
-                       frameborder="0" scrolling="0" width="160px" height="30px")
-    p.
-      Eagle.js is a web-based slideshow framework for Vue.js.
-      It supports animations, themes, interactive widgets (for web demos),
-      and makes it easy to reuse components, slides and styles across presentations.
-
-    p.
-      Most of all, Eagle aims at offering a simple and very hackable API so you
-      can get off the beaten tracks and craft the slideshows you really want.
 
     .thumbnails
       .box-card(v-for='slideshow in slideshows')
@@ -58,21 +44,25 @@ export default {
   height: auto;
   position: absolute;
   background-image: assetUrl("~eagle.js/dist/themes/assets/crossword.png");
-  .content{
+  .content {
     width: 600px;
     max-width: 90%;
     margin: 0 auto;
   }
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   font-weight: normal;
-  font-family: 'Patrick Hand SC'
+  font-family: "Patrick Hand SC";
 }
 
 h1 {
   font-size: 8em;
-  margin-top: 0.5em;
+  margin-top: 0.15em;
   margin-bottom: 0;
   line-height: 0.8em;
   text-align: center;
@@ -94,7 +84,7 @@ h3 {
 }
 
 .grey {
-  color: #bbb
+  color: #bbb;
 }
 
 .box-card {
@@ -108,7 +98,8 @@ h3 {
     border: 1px solid grey;
     overflow: hidden;
   }
-  h3, p {
+  h3,
+  p {
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -121,18 +112,11 @@ a {
 
 .logo {
   display: inline-block;
-  width: 130px;
-  height:90px;
-  margin-right: 0.1em;
-  background-image: url(./logo.svg);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-image: url(./buildinglink-logo.png);
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
-}
-
-.github-star {
-  display: block;
-  margin: 0 auto;
-  margin-top: -10px;
 }
 </style>
