@@ -158,21 +158,22 @@
 
       img(v-if="step === 8" src="./assets/indicator.png", :style="{marginTop: '1em',borderRadius: '4px'}")
 
-    slide(:steps=6, enter='fadeIn')
+    slide(:steps=7, enter='fadeIn')
       h3 Component Wrapping
       p
          eg-transition(enter='bounceInRight' )
           img(v-if="step === 2" src="./assets/wrapping-gifts.gif")
       div(v-if="step >= 3"  style="border: 4px solid #2c3e50; padding: 30px; border-radius:4px")
         p(style="padding-top: 20px;") BuildingLink component
-          span(style="color:tomato; font-weight:800; padding-left:24px;") bl-select
-        div(v-if="step === 4" style="border: 4px solid tomato; border-radius:4px")
+          span(style="color:tomato; font-weight:800; padding-left:24px;") bl-
+          span(v-if="step >= 4") select
+        div(v-if="step === 5" style="border: 4px solid tomato; border-radius:4px")
             p(style="padding-top: 20px;") Vuetify component
              span(style="color:tomato; font-weight:800; padding-left:24px;") v-select
-        div(v-if="step === 5" style="border: 4px solid tomato; border-radius:4px")
+        div(v-if="step === 6" style="border: 4px solid tomato; border-radius:4px")
             p(style="padding-top: 20px;") Another open source library component
              span(style="color:tomato; font-weight:800; padding-left:24px;") aoolc-select
-        div(v-if="step >= 6" style="border: 4px solid tomato; border-radius:4px")
+        div(v-if="step >= 7" style="border: 4px solid tomato; border-radius:4px")
             p(style="padding-top: 20px;") DIY
               span(style="font-size: 2em;") 💪
 
@@ -265,11 +266,13 @@
       .center
         img(src="./assets/chrisbow.png" style="border-radius:4px;")
 
-    slide(enter='fadeIn' leave='fadeOut')
+    slide(steps=3 enter='fadeIn' leave='fadeOut')
       h3 The Design System
       p Our source of truth
       .center
         img(src="./assets/designsystem.png")
+        img(v-if="step===2" src="./assets/notgoodenough.gif" style="border-radius: 4px;")
+        img(v-if="step===3" src="./assets/product-managers.jpg" style="border-radius: 4px;")
 
     slide(steps=2 enter='fadeIn' leave='fadeOut')
       h3 The Schemers
