@@ -101,7 +101,7 @@
           h4 Yesss!
 
     slide.happy-campers(enter='fadeIn' leave='fadeOut')
-      h3(style={backgroundColor: 'grey', marginTop: '0.5em'}) Happy Campers
+      h3 Happy Campers
 
     slide(steps=5 leave='fadeOut')
       h3 TL/DR
@@ -122,19 +122,20 @@
 
     slide(enter="fadeIn")
       h3 Let's dig a little deeper
-      ul
-        li  Anatomy of a component
-        li  Component wrapping
-        li  Component wrapping saves the day
-        li  Oh my open source!
-        li  TailwindCSS
-        li  Vue Styleguidist
-        li  The Design System
-        li  The Schemers
-        li  The Slides
-        li  Q & A
+      div(style="padding-left: 3em; font-size: 1.25em;")
+        ul
+          li  Anatomy of a component
+          li  Component wrapping
+          li  Component wrapping saves the day
+          li  Oh my open source!
+          li  TailwindCSS
+          li  Vue Styleguidist
+          li  The Design System
+          li  The Schemers
+          li  The Slides
+          li  Q & A
 
-    slide(steps=7 enter='fadeIn' )
+    slide(steps=8 enter='fadeIn' )
       h3 Anatomy of a component
       div(v-if="step >= 2")
         p How a component is made
@@ -149,26 +150,29 @@
         eg-code-block(lang='html').
           bl-indicator
             type="line" <eg-code-comment :active='step >= 6' > Intellisense to cycle through display options</eg-code-comment>
-            color="masBlue" <eg-code-comment :active='step >= 7'> Cycle through design team color pallette</eg-code-comment>
-            text="Open"
-            sub-text="08/27/21"
+            color="red" <eg-code-comment :active='step >= 7'> Cycle through design team color pallette</eg-code-comment>
+            text="Expired"
+            sub-text="3/19/21"
+
+      img(v-if="step === 8" src="./assets/indicator.png", :style="{marginTop: '1em',borderRadius: '4px'}")
 
     slide(:steps=6, enter='fadeIn')
       h3 Component Wrapping
       p
          eg-transition(enter='bounceInRight' )
           img(v-if="step === 2" src="./assets/wrapping-gifts.gif")
-      div(v-if="step >= 3"  style="border: 1px solid grey; padding: 30px; border-radius:4px")
+      div(v-if="step >= 3"  style="border: 4px solid #2c3e50; padding: 30px; border-radius:4px")
         p(style="padding-top: 20px;") BuildingLink component
           span(style="color:tomato; font-weight:800; padding-left:24px;") bl-select
-        div(v-if="step === 4" style="border: 1px solid tomato; border-radius:4px")
+        div(v-if="step === 4" style="border: 4px solid tomato; border-radius:4px")
             p(style="padding-top: 20px;") Vuetify component
              span(style="color:tomato; font-weight:800; padding-left:24px;") v-select
-        div(v-if="step === 5" style="border: 1px solid tomato; border-radius:4px")
+        div(v-if="step === 5" style="border: 4px solid tomato; border-radius:4px")
             p(style="padding-top: 20px;") Another open source library component
              span(style="color:tomato; font-weight:800; padding-left:24px;") aoolc-select
-        div(v-if="step >= 6" style="border: 1px solid tomato; border-radius:4px")
-            p(style="padding-top: 20px;") DIY 💪
+        div(v-if="step >= 6" style="border: 4px solid tomato; border-radius:4px")
+            p(style="padding-top: 20px;") DIY
+              span(style="font-size: 2em;") 💪
 
     slide(steps=2 enter='fadeIn' )
       h3 Component Wrapping
@@ -189,6 +193,7 @@
 
     slide(enter='fadeIn' )
       h3 Component Wrapping saves the day
+      img(src="./assets/mightymouse.png" style="object-fit: contain; transform: scale(0.75,0.75); margin-top: -3em;")
 
     slide.wild-west(enter='fadeIn' leave='fadeOut')
       h4 BSP (before spicy peanuts)
@@ -205,37 +210,37 @@
     slide.current-designs(enter='fadeIn' leave='fadeOut')
       h4 Current design
 
-    slide(steps=2 enter='fadeIn' leave='fadeOut')
+    slide(steps=4 enter='fadeIn' leave='fadeOut')
       h3 Oh my open source!
 
-      .quarter(v-if="step === 2" enter='fadeIn' leave='fadeOut')
+      .quarter(v-if="step >= 2" enter='fadeIn' leave='fadeOut')
         img(src='./assets/vuetify.svg' style="object-fit: contain; transform: scale(0.75,0.75)")
         h4 Vuetify
 
-      .quarter(v-if="step === 2" enter='fadeIn' leave='fadeOut')
+      .quarter(v-if="step >= 3" enter='fadeIn' leave='fadeOut')
         img(src="./assets/awesomelogo.svg" style="object-fit: contain;")
         h4 Vue Awesome
 
-      .quarter(v-if="step === 2" enter='fadeIn' leave='fadeOut')
+      .quarter(v-if="step >= 4" enter='fadeIn' leave='fadeOut')
         img(src='./assets/vcalendar.png' style="object-fit: contain; transform: scale(0.75,0.75)")
         h4 v-calendar
 
-      .quarter(v-if="step === 2" enter='fadeIn' leave='fadeOut')
+      .quarter(v-if="step >= 4" enter='fadeIn' leave='fadeOut')
         img(src='./assets/coollightbox.svg' style="object-fit: contain; transform: scale(0.5,0.5)")
         h4 cool lightbox
 
-    slide(leave='fadeOut')
+    slide(steps=2 leave='fadeOut')
       h3 TailwindCSS
         img(src='./assets/tailwindcss.svg' style="object-fit: contain; transform: scale(0.5,0.5)")
       p "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup."
       p It's just a smart CSS library. Allows us to write minimal custom CSS, which can quickly become unmanagable.
-      .center
+      .center(v-if="step===2")
         code(style="background-color: black; padding: 4px; color: white; border-radius: 4px;") <span style="color: red">bl-</span>pt-4 → padding-top: 1rem;
 
     slide(steps=2  leave='fadeOut')
       h3 Vue Styleguidist
       .center(v-if='step === 1')
-        img(src="./assets/styleguidist.png" style="width: 100px; height: 100px; object-fit: contain; ")
+        img(src="./assets/styleguidist.png" style="margin-top: -1em; width: 100px; height: 100px; object-fit: contain; ")
       p An GUI explorer for the vue-ui component library
       DIV(style="display: flex; justify-content: center; margin-top: -20px;")
         ul(v-if='step === 1')
@@ -291,26 +296,19 @@
 
     slide(enter='fadeIn' leave='fadeOut')
       h1 Q & A
+      .center
+        img(src="./assets/hermione.jpg" style="object-fit: contain; transform: scale(0.5,0.5); margin-top: -4em; border-radius: 4px;")
 </template>
 
 <script>
 import eagle from 'eagle.js'
-import whatIsThisMagic from './assets/whatIsThisMagic.gif'
 export default {
   name: 'VueUILibrarySlideShow',
   mixins: [ eagle.slideshow ],
   infos: {
-    // These infos appear on the home page, below the slideshow's thumbnail
     title: 'VUE-UI',
     description: 'The BuildingLink Component Library',
     path: 'vue-ui-presentation'
-  },
-  data () {
-    return {
-      preloadedImages: {
-        youRightNow: whatIsThisMagic
-      }
-    }
   }
 }
 </script>
@@ -382,8 +380,10 @@ export default {
   .happy-campers {
     h3 {
       font-family: 'Cabin Sketch';
-      margin-top: 70%;
+      margin-top: 5%;
+      margin-left: 200px;
       text-align: center;
+      background-color: blueviolet;
       color: rgba(255, 255, 255, .9);
     }
     background-image: url('./assets/happy-campers.jpg');
@@ -411,11 +411,13 @@ export default {
       margin-top: 2%;
       text-align: center;
       color: rgba(255, 255, 255, .9);
+      background-color:  rgba(40, 40, 40, .70);
       border-radius: 4px;
     }
     background-image: url("./assets/currentdesign.png");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .sir-mix-alot{
@@ -464,7 +466,7 @@ export default {
     h3 {
       font-family: 'Cabin Sketch';
       margin-top: 70%;
-      text-align: left;
+      text-align: center;
       color: rgba(255, 255, 255, .9);
     }
     background-image: url(https://s.abcnews.com/images/Entertainment/GTY_goodfellas_ml_150916_16x9_992.jpg);
