@@ -97,16 +97,17 @@
 
       eg-transition(enter='fadeIn' leave='fadeOut')
         .quarter(v-if="step >= 5")
-          img(src='./assets/yes.gif')
-          h4 Yesss!
+          img(src='./assets/house.gif')
+          h4 Solved the riddle
 
     slide.happy-campers(enter='fadeIn' leave='fadeOut')
       h3 Happy Campers
 
     slide(steps=5 leave='fadeOut')
       h3 TL/DR
+      p (or confused by cat metaphors)
       .center
-        p A shared library of UI components used among teams.
+        p Vue-UI is a shared library of UI components used among the teams.
         eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
           p(v-if="step >= 2")
             <b>Consistency:</b> familiar UI/UX across product
@@ -137,8 +138,9 @@
 
     slide(steps=8 enter='fadeIn' )
       h3 Anatomy of a component
-      div(v-if="step >= 2")
-        p How a component is made
+      div
+        p(v-if="step === 2") How a component is made
+        P(v-if="step === 2") (Hint: It's still just HTML, CSS, and JavaScript)
         .center(v-if="step === 2")
           img(src="./assets/birdsbees.png", :style="{marginTop: '1em', borderRadius: '4px'}")
         .center(v-if="step === 3" leave='fadeOut')
