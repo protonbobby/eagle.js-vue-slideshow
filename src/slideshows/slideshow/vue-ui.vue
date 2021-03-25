@@ -162,7 +162,7 @@
       h3 Component Wrapping
       p
          eg-transition(enter='bounceInRight' )
-          img(v-if="step === 2" src="./assets/wrapping-gifts.gif")
+          img(v-if="step === 2" src="./assets/wrapping-gifts.gif" style="width:300px; height: 300px;")
       div(v-if="step >= 3"  style="border: 4px solid #2c3e50; padding: 30px; border-radius:4px")
         p(style="padding-top: 20px;") BuildingLink component
           span(style="color:tomato; font-weight:800; padding-left:24px;") bl-
@@ -236,7 +236,9 @@
       h3 TailwindCSS
         img(src='./assets/tailwindcss.svg' style="object-fit: contain; transform: scale(0.5,0.5)")
       p "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup."
-      p It's just a smart CSS library. Allows us to write minimal custom CSS, which can quickly become unmanagable.
+      p It's just a smart CSS library.
+      p Allows us to cut down on writing custom CSS.
+
       .center(v-if="step===2")
         code(style="background-color: black; padding: 4px; color: white; border-radius: 4px;") <span style="color: red">bl-</span>pt-4 → padding-top: 1rem;
 
@@ -278,7 +280,7 @@
       h3 The Schemers
       .center(v-if="step === 1")
         img(src="./assets/schemer.gif" leave="fadeOut" style="border-radius: 4px;" )
-      ul
+      ul(v-if="step === 2")
         li review design & implementation to make sure it works across teams
         li comprised of one representative from each of the Vue teams
         li hold bi-weekly meetings
